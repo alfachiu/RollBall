@@ -118,7 +118,7 @@ namespace SanFung.RollBall
             lists.Add((byte)CmdSuffix.Ack);         // (分類後綴)
             lists.Add(0);                           // (長度)
             lists.Add((byte)ackType);               // (項目)
-            // lists.Add(0);                        // (資料)無
+            // lists.Add(0);                        // (資料)
             byte[] data = lists.ToArray();
             data[2] = (byte)data.Length;
             return data;                            // _client.Send(data);
