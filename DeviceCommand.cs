@@ -56,7 +56,7 @@ namespace SanFung.RollBall
             lists.Add((byte)CmdPrifix.Verify);      // (分類前綴)
             lists.Add((byte)CmdSuffix.Cmd);         // (分類後綴)
             lists.Add(0);                           // (長度)
-            //lists.Add(0);                         // (項目)無
+            //lists.Add(0);                         // (項目)
             lists.Add(code[0]);                     // (資料)
             lists.Add(code[1]);                     // (資料)
             lists.Add(code[2]);                     // (資料)
@@ -78,7 +78,7 @@ namespace SanFung.RollBall
             lists.Add((byte)CmdPrifix.Verify);      // (分類前綴)
             lists.Add((byte)CmdSuffix.Ack);         // (分類後綴)
             lists.Add(0);                           // (長度)
-            lists.Add((byte)ackType);               // (項目)無
+            lists.Add((byte)ackType);               // (項目)
             lists.Add(code[0]);                     // (資料)
             lists.Add(code[1]);                     // (資料)
             lists.Add(code[2]);                     // (資料)
@@ -99,8 +99,8 @@ namespace SanFung.RollBall
             lists.Add((byte)CmdPrifix.Approve);     // (分類前綴)
             lists.Add((byte)CmdSuffix.Cmd);         // (分類後綴)
             lists.Add(0);                           // (長度)
-            // lists.Add(0);                        // (項目)無
-            // lists.Add(0);                        // (資料)無
+            // lists.Add(0);                        // (項目)
+            // lists.Add(0);                        // (資料)
             byte[] data = lists.ToArray();
             data[2] = (byte)data.Length;
             return data;                            // _client.Send(data);
@@ -158,7 +158,7 @@ namespace SanFung.RollBall
             lists.Add((byte)CmdSuffix.Ack);         // (分類後綴)
             lists.Add(0);                           // (長度)
             lists.Add((byte)ackType);               // (項目)
-            // lists.Add(0);                        // (資料)無
+            // lists.Add(0);                        // (資料)
             byte[] data = lists.ToArray();
             data[2] = (byte)data.Length;
             return data;                            // _client.Send(data);
