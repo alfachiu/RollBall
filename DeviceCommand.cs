@@ -5,6 +5,7 @@ using System.Text;
 
 /// <summary>
 /// DeviceCommand 裝置命令：
+/// GitHub: https://github.com/alfachiu/RollBall
 /// 如果你不嫌我囉嗦 …………^^，統一格式定義可以避免無畏的狀況發生，及未來延展性。
 /// 此程式是給你建議指令格式參考： 分類(前綴+後綴)_長度_項目_資料
 /// 分類只用一個位元組時分類只有15個 分類 = 0xF0(前綴) + 後綴0x0F;
@@ -31,16 +32,16 @@ namespace SanFung.RollBall
 
         public enum CmdSuffix
         {
-            Cmd = 0,        // 命令
-            Ack = 1,        // 告知
+            Cmd,        // 命令
+            Ack,        // 告知
 
             // 添加如果再次送指令後面的答覆等於查詢
             // 情境：
-            AckKnow = 2,    // 告知知道了：(管理)麻煩去撿球一下->(裝置)哦！好的->
+            AckKnow,    // 告知知道了：(管理)麻煩去撿球一下->(裝置)哦！好的->
 
-            AckBusy = 3,    // 告知忙碌中：(管理)麻煩去撿球一下->(裝置)已經在撿了啦！->
-            AckFinish = 4,   // 告知完成了：(管理)麻煩去撿球一下->(裝置)都已經撿好了別再問了！
-            AckNo = 5,      // 告知拒絕：(管理)麻煩去撿球一下->(裝置)沒球可以撿，正在做別的事情哦！別煩我。
+            AckBusy,    // 告知忙碌中：(管理)麻煩去撿球一下->(裝置)已經在撿了啦！->
+            AckFinish,  // 告知完成了：(管理)麻煩去撿球一下->(裝置)都已經撿好了別再問了！
+            AckNo,      // 告知拒絕：(管理)麻煩去撿球一下->(裝置)沒球可以撿，正在做別的事情哦！別煩我。
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace SanFung.RollBall
         public byte[] ApproveAck(CmdSuffix ackType = CmdSuffix.AckKnow)
         {
             List<byte> lists = new List<byte>();    // 暫存器
-            lists.Add((byte)CmdPrifix.Approve);      // (分類前綴)
+            lists.Add((byte)CmdPrifix.Approve);     // (分類前綴)
             lists.Add((byte)CmdSuffix.Ack);         // (分類後綴)
             lists.Add(0);                           // (長度)
             lists.Add((byte)ackType);               // (項目)
