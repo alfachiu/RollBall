@@ -1,4 +1,8 @@
-# SanFung.RollBall.API
-請用瀏覽器開啟 index.html。
-請用文字編輯器開啟 index.html 觀看代碼說明。
-通訊協議使用 Hprose http://hprose.com/ 
+# RollBall-API-HTTP
+SanFung RollBall Game API.
+
+# Document Reference by C#
+E:\Users\Alfa\Documents\GitHub\RollBall_\SanFung.RollBall.Documents\API\HTTP\CSharp\SanFung.Rollball.API.HTTP.cs
+
+# # Document Reference by HTML5
+E:\Users\Alfa\Documents\GitHub\RollBall_\SanFung.RollBall.Documents\API\HTTP\HTML5\index.html
